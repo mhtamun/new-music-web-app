@@ -26,7 +26,6 @@ const TextInput = props => (
         type={props.type}
         value={props.value}
         placeholder={props.hint}
-        error={props.error || ''}
         onChange={props.onChange}
     />
 );

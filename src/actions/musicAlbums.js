@@ -1,20 +1,44 @@
-import store from "../lib/redux";
+export const UPDATE = 'update';
+export const SEARCH = 'search';
 
-export const search = (key) => {
-    const action = {
-        type: 'search',
+export const update = musicAlbums => {
+    return {
+        type: UPDATE,
         payload: {
-            musicAlbums: [
-                {
-                    title: "Taylor Swift",
-                    artist: "Taylor Swift",
-                    url: "https://www.amazon.com/Taylor-Swift/dp/B0014I4KH6",
-                    image: "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
-                    thumbnail_image: "https://i.imgur.com/K3KJ3w4h.jpg"
-                },
-            ],
+            musicAlbums: musicAlbums,
         }
     };
+};
 
-    store.dispatch(action);
+function compareObjects(o1, o2) {
+    var k = '';
+    for (k in o1) if (o1[k] != o2[k]) return false;
+    for (k in o2) if (o1[k] != o2[k]) return false;
+    return true;
+}
+
+function itemExists(haystack, needle) {
+    for (var i = 0; i < haystack.length; i++) if (compareObjects(haystack[i], needle)) return true;
+    return false;
+}
+
+function searchFor(toSearch, objects) {
+    var results = [];
+    for (var i = 0; i < objects.length; i++) {
+        if (objects[i]['title'].toLowerCase().indexOf(toSearch.toLowerCase().trim()) !== -1) {
+            if (!itemExists(results, objects[i])) results.push(objects[i]);
+        }
+    }
+
+    return results;
+}
+
+export const search = (toSearch, musicAlbums) => {
+    const results = searchFor(toSearch, musicAlbums);
+    return {
+        type: SEARCH,
+        payload: {
+            musicAlbums: results
+        }
+    };
 };

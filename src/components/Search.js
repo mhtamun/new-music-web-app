@@ -26,6 +26,6 @@ const Box = styled.div`
 
 export default (props) => (
     <Border>
-        <Box><TextInput hint={'Search'} /></Box>
+        <Box><TextInput hint={'Search'} onChange={props.onChange}/></Box>
     </Border>
 );

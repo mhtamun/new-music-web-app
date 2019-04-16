@@ -69,7 +69,7 @@ const Artist = styled.div`
     }
 `;
 
-const Image = styled.img`
+const Body = styled.img`
     height: auto;
     width: 100%;
     margin-top: 10px;
@@ -86,7 +86,7 @@ export default (props) => (
                     <Artist>{props.artist}</Artist>
                 </TextBox>
             </Header>
-            <Image src={props.image}/>
+            <Body src={props.image}/>
         </Box>
     </Border>
 );
