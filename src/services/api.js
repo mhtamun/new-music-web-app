@@ -1,6 +1,6 @@
 import { get } from '../lib/request';
 
-const getMusicAlbumsEndpoint = 'http://rallycoding.herokuapp.com/api/music_albums';
+const getMusicAlbumsEndpoint = 'https://rallycoding.herokuapp.com/api/music_albums';
 
 export const getMusicAlbums = async () => {
 

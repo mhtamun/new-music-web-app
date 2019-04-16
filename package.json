@@ -1,6 +1,16 @@
 {
   "name": "new-music-web-app",
   "version": "1.0.0",
+  "homepage": "https://mhtamun.github.io/new-music-web-app/",
+  "author": "Maruf Hossain",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhtamun/new-music-web-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mhtamun/new-music-web-app/issues"
+  },
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
@@ -14,11 +24,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,18 +38,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "src/index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mhtamun/new-music-web-app.git"
-  },
-  "author": "Maruf Hossain",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/mhtamun/new-music-web-app/issues"
-  },
-  "homepage": "https://mhtamun.github.io/new-music-web-app/"
+  ]
 }
